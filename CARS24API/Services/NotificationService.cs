@@ -1,8 +1,6 @@
 using Cars24API.Models;
 using MongoDB.Driver;
 using FirebaseAdmin.Messaging;
-using Cars24API.Models;
-using MongoDB.Driver;
 
 namespace Cars24API.Services
 {

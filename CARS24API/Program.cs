@@ -32,10 +32,31 @@ builder.Services.AddSingleton<DatabaseSeeder>();
 builder.Services.AddSingleton<ImportService>();
 builder.Services.AddSingleton<BrandMaintenanceSeeder>();
 
-FirebaseApp firebaseApp = FirebaseApp.Create(new AppOptions()
+// Firebase credentials are secrets and must be supplied by the deployment
+// environment, not committed to the repository. On Render, set
+// Firebase__ServiceAccountJson to the complete service-account JSON value.
+var firebaseServiceAccountJson = builder.Configuration["Firebase:ServiceAccountJson"];
+var firebaseCredentialsPath = builder.Configuration["Firebase:CredentialsPath"]
+    ?? "Firebase/cars24-clone-d0698-firebase-adminsdk-fbsvc-5ece05e6b1.json";
+
+if (!string.IsNullOrWhiteSpace(firebaseServiceAccountJson))
 {
-    Credential = GoogleCredential.FromFile("Firebase/cars24-clone-d0698-firebase-adminsdk-fbsvc-5ece05e6b1.json")  
-});
+    FirebaseApp.Create(new AppOptions
+    {
+        Credential = GoogleCredential.FromJson(firebaseServiceAccountJson)
+    });
+}
+else if (File.Exists(firebaseCredentialsPath))
+{
+    FirebaseApp.Create(new AppOptions
+    {
+        Credential = GoogleCredential.FromFile(firebaseCredentialsPath)
+    });
+}
+else
+{
+    Console.WriteLine("Firebase is not configured; push notifications are disabled.");
+}
 
 // CORS
 builder.Services.AddCors(options =>
