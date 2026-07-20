@@ -1,0 +1,30 @@
+[
+  {
+    "Name": "Toyota",
+    "Country": "Japan",
+    "Logo": "",
+    "ReliabilityScore": 9.6,
+    "BaseAnnualMaintenance": 18000
+  },
+  {
+    "Name": "Honda",
+    "Country": "Japan",
+    "Logo": "",
+    "ReliabilityScore": 9.4,
+    "BaseAnnualMaintenance": 17000
+  },
+  {
+    "Name": "Hyundai",
+    "Country": "South Korea",
+    "Logo": "",
+    "ReliabilityScore": 8.9,
+    "BaseAnnualMaintenance": 16000
+  },
+  {
+    "Name": "BMW",
+    "Country": "Germany",
+    "Logo": "",
+    "ReliabilityScore": 8.1,
+    "BaseAnnualMaintenance": 42000
+  }
+]

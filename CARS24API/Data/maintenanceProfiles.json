@@ -1,0 +1,24 @@
+[
+  {
+    "Brand": "Toyota",
+    "Segment": "SUV",
+    "BaseAnnualMaintenance": 18000,
+    "OilServiceCost": 2500,
+    "BrakePadCost": 5000,
+    "BatteryCost": 8500,
+    "TireReplacementCost": 32000,
+    "ClutchCost": 18000,
+    "SuspensionCost": 15000
+  },
+  {
+    "Brand": "Honda",
+    "Segment": "Sedan",
+    "BaseAnnualMaintenance": 16000,
+    "OilServiceCost": 2200,
+    "BrakePadCost": 4200,
+    "BatteryCost": 7000,
+    "TireReplacementCost": 26000,
+    "ClutchCost": 14000,
+    "SuspensionCost": 12000
+  }
+]

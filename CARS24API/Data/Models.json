@@ -1,0 +1,34 @@
+[
+  {
+    "Brand": "Toyota",
+    "Model": "Fortuner",
+    "Segment": "SUV",
+    "FuelType": "Diesel",
+    "BodyType": "SUV",
+    "IsElectric": false
+  },
+  {
+    "Brand": "Toyota",
+    "Model": "Corolla",
+    "Segment": "Sedan",
+    "FuelType": "Petrol",
+    "BodyType": "Sedan",
+    "IsElectric": false
+  },
+  {
+    "Brand": "Honda",
+    "Model": "City",
+    "Segment": "Sedan",
+    "FuelType": "Petrol",
+    "BodyType": "Sedan",
+    "IsElectric": false
+  },
+  {
+    "Brand": "Hyundai",
+    "Model": "Creta",
+    "Segment": "SUV",
+    "FuelType": "Petrol",
+    "BodyType": "SUV",
+    "IsElectric": false
+  }
+]

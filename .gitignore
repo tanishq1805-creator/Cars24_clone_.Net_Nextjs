@@ -1,0 +1,45 @@
+# Node & Next.js
+**/.next/
+**/node_modules/
+**/.env.local
+**/.env*
+
+# VSCode
+.vscode/
+
+# Logs
+*.log
+**/logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dotnet
+**/bin/
+**/obj/
+**/.build-check*/
+**/CARS24API/appsettings.Development.json
+**/CARS24API/appsettings.*.json
+**/CARS24API/*.user
+**/CARS24API/.vs/
+**/CARS24API/.idea/
+
+# Docker
+**/docker-compose.override.yml
+**/*.pid
+**/CARS24API/*.db
+**/CARS24API/*.db-shm
+**/CARS24API/*.db-wal
+
+# Build artifacts
+**/dist/
+**/out/
+
+.env.local
+.env
+.env.*
+
+
+# Firebase Admin SDK
+CARS24API/Firebase/*.json

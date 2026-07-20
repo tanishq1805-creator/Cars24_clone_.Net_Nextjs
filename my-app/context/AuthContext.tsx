@@ -1,0 +1,113 @@
+"use client";
+
+import React, { createContext, useContext, useEffect, useState } from "react";
+import * as api from "@/lib/userapi";
+type User = {
+  id: string;
+  email: string;
+  fullName: string;
+  phone: string;
+  referralCode?: string;
+};
+import { registerPushNotification } from "@/lib/notification";
+
+type AuthContextType = {
+  user: User | null;
+  loading: boolean;
+  signIn: (email: string, password: string) => Promise<void>;
+  signUp: (
+    email: string,
+    password: string,
+    userData: Partial<User>
+  ) => Promise<User>;
+  signOut: () => Promise<void>;
+};
+
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
+
+export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const registerBrowserForNotifications = async (userId: string) => {
+    try {
+      const fcmToken = await registerPushNotification();
+      if (fcmToken) {
+        await api.registerNotificationToken(userId, fcmToken);
+      }
+    } catch (notificationError) {
+      console.warn("Push notification setup failed:", notificationError);
+    }
+  };
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
+  const signIn = async (email: string, password: string) => {
+    setLoading(true);
+
+    try {
+      const userData = await api.login(email, password);
+      setUser(userData.user);
+      localStorage.setItem("user", JSON.stringify(userData.user));
+
+      await registerBrowserForNotifications(userData.user.id);
+    } catch (error) {
+      console.error("Login failed:", error);
+      throw error;
+    } finally {
+      setLoading(false);
+    }
+  };
+  const signUp = async (
+    email: string,
+    password: string,
+    userData: Partial<any>
+  ) => {
+    setLoading(true);
+    try {
+      const newUser = await api.signup(email, password, {
+        fullName: userData.fullName,
+        phone: userData.phone,
+        referralCode: userData.referralCode,
+      });
+      setUser(newUser.user);
+      localStorage.setItem("user", JSON.stringify(newUser.user));
+      await registerBrowserForNotifications(newUser.user.id);
+      return newUser.user;
+    } catch (error) {
+      console.error("Login failed:", error);
+      throw error;
+    } finally {
+      setLoading(false);
+    }
+  };
+  const signOut = async () => {
+    setLoading(true);
+    try {
+      setUser(null);
+      localStorage.removeItem("user");
+    } catch (error) {
+      console.error("Logout failed:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  return (
+    <AuthContext.Provider value={{ user, loading, signIn, signUp, signOut }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error("useAuth must be used within an AuthProvider");
+  }
+  return context;
+};

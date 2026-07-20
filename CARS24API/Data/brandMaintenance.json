@@ -1,0 +1,112 @@
+[
+  {
+    "Brand": "Maruti Suzuki",
+    "BaseAnnualCost": 10000,
+    "ReliabilityScore": 9.5,
+    "OilServiceCost": 1800,
+    "BrakePadCost": 3200,
+    "BatteryCost": 5500,
+    "TireReplacementCost": 18000,
+    "ClutchCost": 12000,
+    "SuspensionCost": 9000
+  },
+  {
+    "Brand": "Hyundai",
+    "BaseAnnualCost": 12000,
+    "ReliabilityScore": 9.2,
+    "OilServiceCost": 2200,
+    "BrakePadCost": 4000,
+    "BatteryCost": 6500,
+    "TireReplacementCost": 22000,
+    "ClutchCost": 14000,
+    "SuspensionCost": 11000
+  },
+  {
+    "Brand": "Honda",
+    "BaseAnnualCost": 13000,
+    "ReliabilityScore": 9.4,
+    "OilServiceCost": 2300,
+    "BrakePadCost": 4300,
+    "BatteryCost": 7000,
+    "TireReplacementCost": 24000,
+    "ClutchCost": 15000,
+    "SuspensionCost": 12000
+  },
+  {
+    "Brand": "Toyota",
+    "BaseAnnualCost": 15000,
+    "ReliabilityScore": 9.6,
+    "OilServiceCost": 2500,
+    "BrakePadCost": 5000,
+    "BatteryCost": 8000,
+    "TireReplacementCost": 30000,
+    "ClutchCost": 18000,
+    "SuspensionCost": 15000
+  },
+  {
+    "Brand": "Tata",
+    "BaseAnnualCost": 14000,
+    "ReliabilityScore": 8.8,
+    "OilServiceCost": 2300,
+    "BrakePadCost": 4200,
+    "BatteryCost": 7000,
+    "TireReplacementCost": 24000,
+    "ClutchCost": 15000,
+    "SuspensionCost": 12000
+  },
+  {
+    "Brand": "Mahindra",
+    "BaseAnnualCost": 16000,
+    "ReliabilityScore": 8.7,
+    "OilServiceCost": 2600,
+    "BrakePadCost": 4800,
+    "BatteryCost": 8000,
+    "TireReplacementCost": 28000,
+    "ClutchCost": 18000,
+    "SuspensionCost": 15000
+  },
+  {
+    "Brand": "BMW",
+    "BaseAnnualCost": 45000,
+    "ReliabilityScore": 8.2,
+    "OilServiceCost": 9000,
+    "BrakePadCost": 12000,
+    "BatteryCost": 18000,
+    "TireReplacementCost": 60000,
+    "ClutchCost": 40000,
+    "SuspensionCost": 35000
+  },
+  {
+    "Brand": "Mercedes-Benz",
+    "BaseAnnualCost": 50000,
+    "ReliabilityScore": 8.3,
+    "OilServiceCost": 10000,
+    "BrakePadCost": 13000,
+    "BatteryCost": 20000,
+    "TireReplacementCost": 65000,
+    "ClutchCost": 42000,
+    "SuspensionCost": 38000
+  },
+  {
+    "Brand": "Audi",
+    "BaseAnnualCost": 47000,
+    "ReliabilityScore": 8.2,
+    "OilServiceCost": 9500,
+    "BrakePadCost": 12500,
+    "BatteryCost": 19000,
+    "TireReplacementCost": 62000,
+    "ClutchCost": 41000,
+    "SuspensionCost": 36000
+  },
+  {
+    "Brand": "Tesla",
+    "BaseAnnualCost": 22000,
+    "ReliabilityScore": 9.0,
+    "OilServiceCost": 0,
+    "BrakePadCost": 6000,
+    "BatteryCost": 0,
+    "TireReplacementCost": 35000,
+    "ClutchCost": 0,
+    "SuspensionCost": 20000
+  }
+]
