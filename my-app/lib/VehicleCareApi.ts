@@ -1,5 +1,5 @@
 const API_BASE_URL = (
-  process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:5278"
+  process.env.NEXT_PUBLIC_API_BASE_URL ?? "https://cars24-clone-net-nextjs-1.onrender.com"
 ).replace(/\/$/, "");
 const BASE_URL = `${API_BASE_URL}/api`;
 

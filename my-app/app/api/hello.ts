@@ -1,6 +1,6 @@
 const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL
   ? `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/Car`
-  : "http://localhost:5278/api/Car";
+  : "https://cars24-clone-net-nextjs-1.onrender.com/api/Car";
 
 const parseErrorMessage = async (
   response: Response,
